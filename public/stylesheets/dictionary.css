@@ -1,0 +1,35 @@
+/*
+	Страница стилей к справочнику
+*/
+
+#dictionary_screen {
+	background: url(../images/login.png) center no-repeat;
+	width: 330px;
+	height: 150px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#dictionary_screen form {
+	padding-top: 5px;
+}
+
+#dictionary_screen dl dt{
+	float: left;
+	left: 20px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+#dictionary_screen dl dd{
+	margin:0 !important;
+	margin-left: 155px;
+	padding-top:10px;
+}
+
+#dictionary_screen dl dd input{
+	margin: 0;
+	padding: 0;
+	width: 150px;
+}

@@ -1,0 +1,2 @@
+module AppActionsHelper
+end

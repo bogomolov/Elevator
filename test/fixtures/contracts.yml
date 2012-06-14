@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  num: MyString
+  stamp: 2012-06-11
+  supplier: 
+  startdate: 2012-06-11
+  enddate: 2012-06-11
+
+two:
+  num: MyString
+  stamp: 2012-06-11
+  supplier: 
+  startdate: 2012-06-11
+  enddate: 2012-06-11

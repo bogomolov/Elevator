@@ -1,0 +1,35 @@
+/*
+	Стили для окна ввода пароля
+*/
+
+#login_screen {
+	background: url(../images/login.png) center no-repeat;
+	width: 330px;
+	height: 150px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#login_screen form {
+	padding-top: 5px;
+}
+
+#login_screen dl dt{
+	float: left;
+	left: 20px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+#login_screen dl dd{
+	margin:0 important!;
+	margin-left: 155px;
+	padding-top:10px;
+}
+
+#login_screen dl dd input{
+	margin: 0;
+	padding: 0;
+	width: 150px;
+}

@@ -1,0 +1,90 @@
+* html #container { overflow: visible; }
+
+html {
+	color: #202020;
+	overflow: auto;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font: 14px/120% Verdana, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+/* Container*/
+#container {
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/* Left area classes and objects */
+#left_area {
+	background: url(../images/background_pattern.png);
+	float: left;
+	height: 100%;
+	width: 200px;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+
+#left_panel {
+	height: 100%;
+	color: #F3FFD6;
+}
+
+#logo {
+	height: 30px;
+	margin-top:4px;
+	text-align: center;
+}
+
+/* Right area classes and objects */
+#right_area {
+	height: 100%;
+	overflow: hidden;
+	color: black;
+}
+
+#working_area {
+	margin: auto;
+}
+
+/* Footer */
+#footer {
+    height: 20px;
+    color: #FFF;
+    background: green;
+    position: relative;
+    z-index: 1000;
+    margin-top: -20px;
+    margin-right: 20px;
+    width: 100%;
+    text-align: right;
+}
+
+#footer a {
+	color: #FFF;
+	padding: 0 5px;
+	text-decoration: underline;
+}
+
+/* Various */
+.window {
+	margin: 50% auto;
+	padding: 10px;
+}
+
+fieldset {
+	margin: 10px;
+}
