@@ -11,5 +11,9 @@ class PagesController < ApplicationController
   def about
     @title = "О программе"
   end
+  
+  def menu
+    @title = "Меню"
+  end
 
 end

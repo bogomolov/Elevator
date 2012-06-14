@@ -5,6 +5,8 @@ ElevatorApp::Application.routes.draw do
 
   get "pages/about"
 
+  get "pages/menu"
+
   resources :user_privileges
 
   resources :app_actions
@@ -22,6 +24,12 @@ ElevatorApp::Application.routes.draw do
   resources :suppliers
 
   get "home/index"
+  
+  match '/signup', :to => 'users#new'
+  
+  match '/dashboard', :to => 'pages#dashboard'
+  match '/about', :to => 'pages#about'
+  match '/menu', :to => 'pages#menu'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
