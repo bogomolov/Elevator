@@ -1,0 +1,18 @@
+      <% if item.name.upcase == controller_name.upcase %>
+      <li class="selected">
+      	<a href="<%= "/"+item.name.downcase %>"><span><%= item.description %></span></a>
+        <ul id="submenu">
+          <% AppAction.select{ |app_module_id| app_module_id = item.id }.sort{ |ord| }.each do |app_action| %>
+          <% if app_action.name.upcase == action_name.upcase %>
+          <li class="selected"><a href="<%= "/"+item.name.downcase+"/"+app_action.name.downcase %>"><span><Action 3><%= app_action.description %></span></a></li>
+          <% else %>
+          <li><a href="<%= "/"+item.name.downcase+"/"+app_action.name.downcase %>"><span><%= app_action.description %></span></a></li>
+          <% end %>
+          <% end %>
+        </ul>
+      <% else %>
+      <li>
+      	<a href="<%= "/"+item.name.downcase %>"><span><%= item.description %></span></a>
+      <% end %>
+
+      </li>

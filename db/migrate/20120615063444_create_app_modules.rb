@@ -1,6 +1,6 @@
 class CreateAppModules < ActiveRecord::Migration
   def self.up
-    create_table "control.app_modules" do |t|
+    create_table 'control.app_modules' do |t|
       t.string :name
       t.string :description
 
@@ -9,6 +9,6 @@ class CreateAppModules < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table "control.app_modules"
+    drop_table 'control.app_modules'
   end
 end

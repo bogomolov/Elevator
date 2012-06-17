@@ -11,24 +11,7 @@
   <div id="container">
    <div id="left_area">
     <div id="logo"><a href="#">LOGO</a></div>
-    <%= render :partial => 'pages/menu', :locals => { :module => "Admin", :action => "Create user" } %>
-    <div id="left_panel">
-     <ul id="menu">
-      <li><a href="#"><span>Старт</span></a></li>
-      <li><a href="#"><span>MODULE 1</span></a></li>
-      <li class="selected"><a href="#"><span>MODULE 2</span></a>
-       <ul id="submenu">
-        <li><a href="#"><span>Action 1</span></a></li>
-        <li><a href="#"><span>Action 2</span></a></li>
-        <li class="selected"><a href="#"><span>Action 3</span></a></li>
-        <li><a href="#"><span>Action 4</span></a></li>
-       </ul>
-      </li>
-      <li><a href="#"><span>MODULE 3</span></a></li>
-      <li><a href="#"><span>MODULE 4</span></a></li>
-      <li><a href="#"><span>Выход</span></a></li>
-     </ul>
-    </div>
+    <%= render :partial => 'pages/menu' %>
    </div>
 
    <div id="right_area">

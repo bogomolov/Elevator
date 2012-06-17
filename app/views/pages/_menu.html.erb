@@ -1,19 +1,6 @@
 <div>
     <ul id="menu">
-      
-      <li><a href="#"><span>Старт</span></a></li>
-      <li><a href="#"><span>MODULE 1</span></a></li>
-      <li class="selected"><a href="#"><span>MODULE 2</span></a>
-       <ul id="submenu">
-        <li><a href="#"><span>Action 1</span></a></li>
-        <li><a href="#"><span>Action 2</span></a></li>
-        <li class="selected"><a href="#"><span>Action 3</span></a></li>
-        <li><a href="#"><span>Action 4</span></a></li>
-       </ul>
-      </li>
-      <li><a href="#"><span>MODULE 3</span></a></li>
-      <li><a href="#"><span>MODULE 4</span></a></li>
-      <li><a href="#"><span>Выход</span></a></li>
+      <%= render :partial => "pages/menu_item", :collection => AppModule.all, :as => :item %>
     </ul>
-
 </div>
+<%= "Сейчас Вы находитесь здесь: "+controller.controller_name+" "+action_name %>

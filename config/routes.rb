@@ -1,4 +1,6 @@
 ElevatorApp::Application.routes.draw do
+  resources :app_modules
+
   get "pages/home"
 
   get "pages/dashboard"
@@ -10,8 +12,6 @@ ElevatorApp::Application.routes.draw do
   resources :user_privileges
 
   resources :app_actions
-
-  resources :app_modules
 
   resources :privileges
 
@@ -28,6 +28,7 @@ ElevatorApp::Application.routes.draw do
   match '/signup', :to => 'users#new'
   
   match '/dashboard', :to => 'pages#dashboard'
+  match '/pages', :to => 'pages#dashboard'
   match '/about', :to => 'pages#about'
   match '/menu', :to => 'pages#menu'
 
