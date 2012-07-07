@@ -1,0 +1,33 @@
+<%= form_for(@core_action) do |f| %>
+  <% if @core_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@core_action.errors.count, "error") %> prohibited this core_action from being saved:</h2>
+
+      <ul>
+      <% @core_action.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :module_id %><br />
+    <%= f.collection_select :module_id, @core_modules, :id, :description %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :ord %><br />
+    <%= f.number_field :ord %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

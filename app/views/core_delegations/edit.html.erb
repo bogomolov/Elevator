@@ -1,0 +1,10 @@
+<div id="delegation_form">
+ <fieldset>
+<legend>Редактирование назначения</legend>
+
+<%= render 'form', :locals => { :core_users => @core_users } %>
+
+<%= link_to 'Просмотр', @core_delegation %> |
+<%= link_to 'Назад', admin_delegations_path %>
+ </fieldset>
+</div>

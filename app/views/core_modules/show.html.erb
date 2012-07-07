@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @core_module.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @core_module.description %>
+</p>
+
+<p>
+  <b>Ord:</b>
+  <%= @core_module.ord %>
+</p>
+
+
+<%= link_to 'Edit', edit_core_module_path(@core_module) %> |
+<%= link_to 'Back', core_modules_path %>
+
+<br><br>
+<h2>Actions:</h2>
+<table border=1>
+  <tr>
+    <th>Module</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Ord</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_module.core_actions.each do |core_action| %>
+  <tr>
+    <td><%= core_action.module_id %></td>
+    <td><%= core_action.name %></td>
+    <td><%= core_action.description %></td>
+    <td><%= core_action.ord %></td>
+    <td><%= link_to 'Show', core_action %></td>
+    <td><%= link_to 'Edit', edit_core_action_path(core_action) %></td>
+    <td><%= link_to 'Destroy', core_action, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'Add new action', new_core_action_path(@core_module.id) %>

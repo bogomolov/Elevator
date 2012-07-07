@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  batch_date: 2012-07-06
+
+two:
+  batch_date: 2012-07-06

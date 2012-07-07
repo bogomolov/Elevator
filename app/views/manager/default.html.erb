@@ -1,0 +1,14 @@
+<div id="manager">
+ <fieldset>
+ 	<legend>Сводка директора</legend>
+ 	<h3>Поставщики</h3>
+ 	<strong>Количество: <%= AppSupplier.find(:all).count %></strong>
+ 	<br>
+ 	<%= link_to "Перейти к поставщикам", manager_suppliers_path %><br>
+ 	<hr>
+ 	<h3>Договора</h3>
+ 	<strong>Количество: <%= AppContract.find(:all).count %></strong>
+ 	<br>
+ 	<%= link_to "Перейти к договорам", manager_contracts_path %><br>
+ </fieldset>
+</div>

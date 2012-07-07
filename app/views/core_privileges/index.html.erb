@@ -1,0 +1,29 @@
+<div id="manager">
+ <fieldset>
+<legend>Список назначения действий ролям</legend>
+
+<table border=1 cellspacing=0>
+  <tr>
+    <th>Роль</th>
+    <th>Действие</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_privileges.each do |core_privilege| %>
+  <tr>
+    <td><%= CoreRole.find(core_privilege.role_id).description %></td>
+    <td><%= CoreAction.find(core_privilege.action_id).full_name %></td>
+    <td><%= link_to 'Просмотр', core_privilege %></td>
+    <td><%= link_to 'Изменить', edit_core_privilege_path(core_privilege) %></td>
+    <td><%= link_to 'Удалить', core_privilege, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новое назначение', new_core_privilege_path %>
+ </fieldset>
+</div>

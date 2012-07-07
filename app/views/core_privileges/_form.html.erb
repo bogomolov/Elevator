@@ -1,0 +1,25 @@
+<%= form_for(@core_privilege) do |f| %>
+  <% if @core_privilege.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@core_privilege.errors.count, "error") %> prohibited this core_privilege from being saved:</h2>
+
+      <ul>
+      <% @core_privilege.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :role_id %><br />
+    <%= f.collection_select :role_id, @core_roles, :id, :description %>
+  </div>
+  <div class="field">
+    <%= f.label :action_id %><br />
+    <%= f.collection_select :action_id, @core_actions, :id, :full_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

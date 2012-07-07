@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  batch_id: 1
+  car_num: MyString
+  weight_brutto: 1.5
+  moisture: 1.5
+
+two:
+  batch_id: 1
+  car_num: MyString
+  weight_brutto: 1.5
+  moisture: 1.5

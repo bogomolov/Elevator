@@ -1,0 +1,31 @@
+<div id="manager">
+ <fieldset>
+<legend>Партии</legend>
+
+<table class="sort">
+ <thead>
+  <tr>
+    <td>Дата</td>
+    <td>Масса брутто</td>
+    <td></td>
+    <td></td>
+  </tr>
+ </thead>
+ <tbody>
+<% @app_batches.each do |app_batch| %>
+  <tr>
+    <td><%= app_batch.batch_date.to_formatted_s(:ru_date) %></td>
+    <td><%= AppIncome.find_all_by_batch_id(app_batch.id) ? app_batch.weight_sum : 0 %></td>
+    <td><%= link_to 'Редактировать', app_batch %></td>
+    <td><%= link_to 'Удалить', batch_hide_url(app_batch.id), {:onclick => " return confirm ('Будут удалены все связанные завозы!\\nВы действительно хотите удалить партию?')"} %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'Новая партия', new_app_batch_path %>
+
+ </fieldset>
+</div>

@@ -1,0 +1,21 @@
+<%= form_for(@app_batch) do |f| %>
+  <% if @app_batch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app_batch.errors.count, "error") %> prohibited this app_batch from being saved:</h2>
+
+      <ul>
+      <% @app_batch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Дата партии' %><br />
+    <%= f.date_select :batch_date, :order => [:day,:month,:year], :use_month_numbers => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

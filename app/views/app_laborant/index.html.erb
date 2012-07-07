@@ -1,0 +1,29 @@
+<h1>Listing core_users</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Fullname</th>
+    <th>Admin</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_users.each do |core_user| %>
+  <tr>
+    <td><%= core_user.username %></td>
+    <td><%= core_user.fullname %></td>
+    <td><%= core_user.admin %></td>
+    <td><%= core_user.password %></td>
+    <td><%= link_to 'Show', core_user %></td>
+    <td><%= link_to 'Edit', edit_core_user_path(core_user) %></td>
+    <td><%= link_to 'Destroy', core_user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Core user', new_core_user_path %>

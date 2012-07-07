@@ -3,7 +3,6 @@
 */
 
 #dashboard {
-	1background: url(../images/login.png) center no-repeat;
 	width: 90%;
 	text-align: center;
 	margin: 0 auto;
@@ -15,8 +14,44 @@
 	display: inline-block;
 	text-align: left;
 	background-color: #efefef;
+	vertical-align: top;
 }
 
 #dashboard fieldset h1 {
 	font-size: 1em;
 }
+
+#manager {
+    width: 90%;
+    text-align: center;
+    margin: 0auto;
+}
+
+#manager fieldset {
+	margin: 10px;
+	width: 90%;
+	display: inline-block;
+	text-align: center;
+	background-color: #efefef;
+}
+
+#manager fieldset table{
+    width:100%;
+    margin: 0 auto;
+}
+
+#delegation_form {
+    width: 90%;
+    text-align: center;
+    margin: 0auto;
+}
+
+#delegation_form fieldset {
+	margin: 10px;
+	width: 300px;
+	display: inline-block;
+	text-align: center;
+	background-color: #efefef;
+}
+
+

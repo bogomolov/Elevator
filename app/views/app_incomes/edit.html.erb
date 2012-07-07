@@ -1,0 +1,9 @@
+<div id="delegation_form">
+ <fieldset>
+<legend>Изменение завоза</legend>
+<%= render 'form' %>
+
+<%= link_to 'Просмотр', @app_income %> |
+<%= link_to 'Назад', app_batch_url(@app_income.batch_id) %>
+ </fieldset>
+</div>

@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  section: MyString
+  param: MyString
+  value: MyString
+
+two:
+  section: MyString
+  param: MyString
+  value: MyString
+
+# == Schema Information
+#
+# Table name: conf_properties
+#
+#  id         :integer         not null, primary key
+#  section    :string(255)
+#  param      :string(255)
+#  value      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

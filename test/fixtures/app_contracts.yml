@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  num: MyString
+  stamp: 2012-06-24
+  supplier_id: 1
+  start_date: 2012-06-24
+  finish_date: 2012-06-24
+
+two:
+  num: MyString
+  stamp: 2012-06-24
+  supplier_id: 1
+  start_date: 2012-06-24
+  finish_date: 2012-06-24
+
+# == Schema Information
+#
+# Table name: app_contracts
+#
+#  id          :integer         not null, primary key
+#  num         :string(255)
+#  stamp       :date
+#  supplier_id :integer
+#  start_date  :date
+#  finish_date :date
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

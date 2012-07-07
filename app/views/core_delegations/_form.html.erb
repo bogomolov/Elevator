@@ -1,0 +1,34 @@
+<%= form_for(@core_delegation) do |f| %>
+  <% if @core_delegation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@core_delegation.errors.count, "error") %> prohibited this core_delegation from being saved:</h2>
+
+      <ul>
+      <% @core_delegation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t 'user' %><br />
+    <%= f.collection_select :user_id, @core_users, :id, :fullname %>
+  </div>
+  <div class="field">
+    <%= f.label t 'role' %><br />
+    <%= f.collection_select :role_id, @core_roles, :id, :description %>
+  </div>
+  <div class="field">
+    <%= f.label t 'valid_from' %><br />
+    <%= f.date_select :valid_from, :order => [:day,:month,:year], :use_month_numbers => true %>
+  </div>
+  <div class="field">
+    <%= f.label t 'valid_till' %><br />
+    <%= f.date_select :valid_till, :order => [:day,:month,:year], :use_month_numbers => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

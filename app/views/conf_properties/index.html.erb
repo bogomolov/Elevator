@@ -1,0 +1,27 @@
+<h1>Listing conf_properties</h1>
+
+<table>
+  <tr>
+    <th>Section</th>
+    <th>Param</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @conf_properties.each do |conf_property| %>
+  <tr>
+    <td><%= conf_property.section %></td>
+    <td><%= conf_property.param %></td>
+    <td><%= conf_property.value %></td>
+    <td><%= link_to 'Show', conf_property %></td>
+    <td><%= link_to 'Edit', edit_conf_property_path(conf_property) %></td>
+    <td><%= link_to 'Destroy', conf_property, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Conf property', new_conf_property_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Module:</b>
+  <%= @core_action.module_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @core_action.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @core_action.description %>
+</p>
+
+<p>
+  <b>Ord:</b>
+  <%= @core_action.ord %>
+</p>
+
+
+<%= link_to 'Edit', edit_core_action_path(@core_action) %> |
+<%= link_to 'Back', core_actions_path %>

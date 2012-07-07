@@ -1,0 +1,41 @@
+  <% if current_core_user.admin || !current_core_user.nil? && CorePrivilege.find_by_sql(["select p.* 
+                                     from core_privileges p, 
+                                          core_actions a,
+                                          core_delegations d
+                                    where p.action_id = a.id
+                                      and p.role_id = d.role_id 
+                                      and a.module_id = ?
+                                      and d.user_id = ?
+                                      and now() between d.valid_from and d.valid_till",
+                                      item.id, current_core_user.id||0]).count != 0 %>
+    <% if item.name.upcase == controller_name.upcase || item.name.upcase == $current_menu %>
+      <li class="selected">
+      	<a href="<%= "/"+item.name.downcase %>"><span><%= item.description %></span></a>
+        <ul id="submenu">
+          <% CoreAction.find_by_sql(["select distinct a.* 
+                                     from core_privileges p, 
+                                          core_actions a,
+                                          core_delegations d
+                                    where a.module_id = ?
+                                      and p.action_id = a.id
+                                      and (p.role_id = d.role_id 
+                                      and d.user_id = ?
+                                      and now() between d.valid_from and d.valid_till
+                                      or ? = true)
+                                    order by ord",
+                                      item.id, current_core_user.id, current_core_user.admin]).each do |core_action| %>
+          <% if core_action.name.upcase == action_name.upcase || core_action.name.upcase == $current_submenu %>
+          <li class="selected"><a href="<%= "/"+item.name.downcase+"/"+core_action.name.downcase %>"><span><Action 3><%= core_action.description %></span></a></li>
+          <% else %>
+          <li><a href="<%= "/"+item.name.downcase+"/"+core_action.name.downcase %>"><span><%= core_action.description %></span></a></li>
+          <% end %>
+          <% end %>
+        </ul>
+    <% else %>
+      <li>
+      	<a href="<%= "/"+item.name.downcase %>"><span><%= item.description %></span></a>
+    <% end %>
+
+      </li>
+  <% end %>
+

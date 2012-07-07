@@ -1,0 +1,38 @@
+<%= form_for(@app_income) do |f| %>
+  <% if @app_income.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app_income.errors.count, "error") %> prohibited this app_income from being saved:</h2>
+
+      <ul>
+      <% @app_income.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :batch_id %>
+  <div class="field">
+    <%= f.label 'Дата завоза: ' %><br />
+    <%= @app_batch.batch_date.to_formatted_s(:ru_date) %>
+  </div>
+  <div class="field">
+    <%= f.label 'Время завоза' %><br />
+    <%= f.datetime_select :car_time, :order => [:hour,:minute] %>
+  </div>
+  <div class="field">
+    <%= f.label 'Номер машины' %><br />
+    <%= f.text_field :car_num %>
+  </div>
+  <div class="field">
+    <%= f.label 'Масса брутто' %><br />
+    <%= f.text_field :weight_brutto %>
+  </div>
+  <div class="field">
+    <%= f.label 'Влажность' %><br />
+    <%= f.text_field :moisture %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<h1>Listing app_contracts</h1>
+
+<table>
+  <tr>
+    <th>Num</th>
+    <th>Stamp</th>
+    <th>Supplier</th>
+    <th>Start date</th>
+    <th>Finish date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @app_contracts_active.each do |app_contract| %>
+  <tr>
+    <td><%= app_contract.num %></td>
+    <td><%= app_contract.stamp %></td>
+    <td><%= app_contract.supplier_id %></td>
+    <td><%= app_contract.start_date %></td>
+    <td><%= app_contract.finish_date %></td>
+    <td><%= link_to 'Show', app_contract %></td>
+    <td><%= link_to 'Edit', edit_app_contract_path(app_contract) %></td>
+    <td><%= link_to 'Destroy', app_contract, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New App contract', new_app_contract_path %>

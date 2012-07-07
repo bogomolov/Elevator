@@ -1,0 +1,29 @@
+<h1>Listing core_delegations</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Role</th>
+    <th>Valid from</th>
+    <th>Valid till</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_delegations.each do |core_delegation| %>
+  <tr>
+    <td><%= core_delegation.user_id %></td>
+    <td><%= core_delegation.role_id %></td>
+    <td><%= core_delegation.valid_from %></td>
+    <td><%= core_delegation.valid_till %></td>
+    <td><%= link_to 'Show', core_delegation %></td>
+    <td><%= link_to 'Edit', edit_core_delegation_path(core_delegation) %></td>
+    <td><%= link_to 'Destroy', core_delegation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Core delegation', new_core_delegation_path %>

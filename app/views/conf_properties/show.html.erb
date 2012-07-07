@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Section:</b>
+  <%= @conf_property.section %>
+</p>
+
+<p>
+  <b>Param:</b>
+  <%= @conf_property.param %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @conf_property.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_conf_property_path(@conf_property) %> |
+<%= link_to 'Back', conf_properties_path %>

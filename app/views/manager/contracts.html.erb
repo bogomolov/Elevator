@@ -1,0 +1,48 @@
+<div id="manager">
+ <fieldset>
+ 	<legend>Список договоров</legend>
+ 	<h3>Действующие договора</h3>
+
+<table class="sort">
+ <thead>
+  <tr>
+    <td>Номер</td>
+    <td>Дата</td>
+    <td>Поставщик</td>
+    <td>Дата начала</td>
+    <td>Дата окончания</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ </thead>
+ <tbody>
+<% if @app_contracts then %>
+<%   @app_contracts.each do |app_contract| %>
+  <tr>
+    <td><%= app_contract.num %></td>
+    <td><%= app_contract.stamp %></td>
+    <td><%= app_contract.supplier_id %></td>
+    <td><%= app_contract.start_date %></td>
+    <td><%= app_contract.finish_date %></td>
+    <td><%= link_to 'Просмотр', app_contract %></td>
+    <td><%= link_to 'Изменить', edit_app_contract_path(app_contract) %></td>
+    <td><%= link_to 'Удалить', app_contract, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<%   end %>
+<% end %>
+ </tbody>
+</table>
+
+<br />
+
+    <%= link_to 'Добавить договор', new_app_contract_path %> 
+    <br />
+    <br />
+    <hr />
+ 	<h3>Закрытые договора</h3>
+ 	<strong>Количество: <%= AppContract.find(:all).count %></strong>
+ 	<br>
+ 	<%= link_to "Перейти к договорам", manager_contracts_path %><br>
+ </fieldset>
+</div>

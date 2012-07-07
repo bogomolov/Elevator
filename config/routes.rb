@@ -1,37 +1,78 @@
 ElevatorApp::Application.routes.draw do
-  resources :app_modules
+  resources :app_incomes
 
-  get "pages/home"
+  resources :app_batches
+  
+  resources :app_seasons
 
-  get "pages/dashboard"
+  devise_for :core_user
 
-  get "pages/about"
+  namespace :admin do
+    resources :core_users # Have the admin manage them here.
+  end
 
-  get "pages/menu"
+  resources :conf_properties
 
-  resources :user_privileges
+  resources :app_contracts
 
-  resources :app_actions
+  resources :app_suppliers
 
-  resources :privileges
+  resources :app_laborants
 
-  resources :roles
+  resources :core_users
 
-  resources :users
+  resources :core_delegations
 
-  resources :contracts
+  resources :core_privileges
 
-  resources :suppliers
+  resources :core_roles
+
+  resources :core_actions
+
+  resources :core_modules
+
+  resources :core_user_session
+
+  get "basises/home"
+
+  get "basises/dashboard"
+
+  get "basises/about"
+
+  get "basises/menu"
 
   get "home/index"
   
-  match '/signup', :to => 'users#new'
+  get "manager/default"
   
-  match '/dashboard', :to => 'pages#dashboard'
-  match '/pages', :to => 'pages#dashboard'
-  match '/about', :to => 'pages#about'
-  match '/menu', :to => 'pages#menu'
+  get "manager/suppliers"
+  
+  get "manager/contracts"
+  
+  get "manager/seasons"
+  
+  get "lab/batches"
+  
+  get "admin/users"
+  
+  get "admin/delegations"
+  
+  get "admin/audit"
+  
+  get "admin/recyclebin"
+  
+  get "admin/database"
+  
+  get "core_user/registration"
+  
+  match '/dashboard', :to => 'basises#dashboard'
+  match '/basises', :to => 'basises#dashboard'
+  match '/about', :to => 'basises#about'
+  match '/manager', :to => 'manager#default'
+  match '/admin', :to => 'admin#users'
+  match '/lab', :to => 'lab#batches'
 
+#  match '/app_income/:batch_id/new' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -42,6 +83,9 @@ ElevatorApp::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+
+  match 'app_batches/:id/hide' => 'app_batches#hide', :as => :batch_hide
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -81,11 +125,12 @@ ElevatorApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#home"
+  root :to => "basises#dashboard"
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  
 end

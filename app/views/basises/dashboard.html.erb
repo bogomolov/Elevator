@@ -1,0 +1,19 @@
+<div id="dashboard">
+ <fieldset>
+ 	<legend>Управление пользователями</legend>
+ 	<label>Пользователи</label>
+ 	<label>Роли</label>
+ </fieldset>
+ <fieldset>
+ 	<legend>Управление поставщиками</legend>
+ 	<label>Поставщики</label>
+ 	<ul>
+ 	<% AppSupplier.find(:all).each do |app_supplier| %>
+ 	<li><%= app_supplier.short_name %></li>
+ 	<% end %>
+ 	</ul>
+ 	<%= link_to "Создать", :controller => "app_suppliers", :action => @new %><br>
+ 	<label>Договора</label>
+ 	<%= link_to "Создать", :controller => "app_contracts", :action => @new %><br>
+ </fieldset>
+</div>

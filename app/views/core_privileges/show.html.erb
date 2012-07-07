@@ -1,0 +1,22 @@
+<div id="delegation_form">
+ <fieldset>
+<legend>Просмотр назначения действия и роли</legend>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Role:</b>
+  <%= CoreRole.find(@core_privilege.role_id).description %>
+</p>
+
+<p>
+  <b>Action:</b>
+  <%= CoreAction.find(@core_privilege.action_id).full_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_core_privilege_path(@core_privilege) %> |
+<%= link_to 'Back', core_privileges_path %>
+
+ </fieldset>
+</div>

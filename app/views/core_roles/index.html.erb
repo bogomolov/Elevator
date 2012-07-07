@@ -1,0 +1,25 @@
+<h1>Listing core_roles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_roles.each do |core_role| %>
+  <tr>
+    <td><%= core_role.name %></td>
+    <td><%= core_role.description %></td>
+    <td><%= link_to 'Show', core_role %></td>
+    <td><%= link_to 'Edit', edit_core_role_path(core_role) %></td>
+    <td><%= link_to 'Destroy', core_role, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Core role', new_core_role_path %>

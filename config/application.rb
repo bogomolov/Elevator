@@ -32,12 +32,14 @@ module ElevatorApp
     config.i18n.default_locale = :ru
 
     # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.secret_token = '0b48e02009f82f5ba35a5bb9a704bc580d809c4848c10a3b72c6ad9b5cefc0a2d0dcf8a58a51b9cd4107e524a211924ed27c5a10ae7cb49db927e3b64ab038e8'
+    config.action_controller.include_all_helpers = false
   end
 end

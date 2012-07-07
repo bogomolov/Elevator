@@ -1,0 +1,38 @@
+<div id="manager">
+ <fieldset>
+<legend>Список назначения ролей</legend>
+
+<table class="sort" align="center">
+ <thead>
+  <tr>
+    <td rowspan=2>Пользователь</td>
+    <td rowspan=2>Роль</td>
+    <td colspan=2>Действителен</td>
+    <td colspan=3 rowspan=2></td>
+  </tr>
+  <tr>
+    <td>С</td>
+    <td>По</td>
+  </tr>
+ </thead>
+ <tbody>
+<% @core_delegations.each do |core_delegation| %>
+  <tr>
+    <td><%= core_delegation.user_name %></td>
+    <td><%= core_delegation.role_name %></td>
+    <td><%= core_delegation.valid_from_s %></td>
+    <td><%= core_delegation.valid_till_s %></td>
+    <td><%= link_to 'Просмотр', core_delegation %></td>
+    <td><%= link_to 'Изменить', edit_core_delegation_path(core_delegation) %></td>
+    <td><%= button_to 'Удалить', core_delegation, {:onclick => " return confirm ('Вы уверены?')", :method => :delete} %></td>
+  </tr>
+<% end %>
+ </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Новое назначение', new_core_delegation_path %>
+
+ </fieldset>
+</div>

@@ -1,0 +1,35 @@
+<div id="delegation_form">
+ <fieldset>
+<legend>Просмотр завоза</legend>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Дата завоза:</b>
+  <%= @app_batch.batch_date.to_formatted_s(:ru_date) %>
+</p>
+
+<p>
+  <b>Время завоза:</b>
+  <%= @app_income.car_time.to_formatted_s(:ru_time) %>
+</p>
+
+<p>
+  <b>Номер машины:</b>
+  <%= @app_income.car_num %>
+</p>
+
+<p>
+  <b>Масса брутто:</b>
+  <%= @app_income.weight_brutto %> кг
+</p>
+
+<p>
+  <b>Влажность:</b>
+  <%= @app_income.moisture %> %
+</p>
+
+
+<%= link_to 'Edit', edit_app_income_path(@app_income) %> |
+<%= link_to 'Back', app_batch_url(@app_income.batch_id) %>
+ </fieldset>
+</div>

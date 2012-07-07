@@ -1,0 +1,37 @@
+<%= form_for(@app_contract) do |f| %>
+  <% if @app_contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app_contract.errors.count, "error") %> prohibited this app_contract from being saved:</h2>
+
+      <ul>
+      <% @app_contract.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Номер договора' %><br />
+    <%= f.text_field :num, :align => 'center' %>
+  </div>
+  <div class="field">
+    <%= f.label 'Дата заключения' %><br />
+    <%= f.date_select :stamp, :order => [:day,:month,:year], :use_month_numbers => true %>
+  </div>
+  <div class="field">
+    <%= f.label 'Поставщик' %><br />
+    <%= f.collection_select :supplier_id, @app_suppliers, :id, :short_name %>
+  </div>
+  <div class="field">
+    <%= f.label 'Дата начала' %><br />
+    <%= f.date_select :start_date, :order => [:day,:month,:year], :use_month_numbers => true %>
+  </div>
+  <div class="field">
+    <%= f.label 'Дата окончания' %><br />
+    <%= f.date_select :finish_date, :order => [:day,:month,:year], :use_month_numbers => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Добавить' %>
+  </div>
+<% end %>

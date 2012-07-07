@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Short name:</b>
+  <%= @app_supplier.short_name %>
+</p>
+
+<p>
+  <b>Full name:</b>
+  <%= @app_supplier.full_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_app_supplier_path(@app_supplier) %> |
+<%= link_to 'Back', app_suppliers_path %>

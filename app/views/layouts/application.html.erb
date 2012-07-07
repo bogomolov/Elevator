@@ -4,14 +4,14 @@
   <title><%= title %></title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div id="container">
    <div id="left_area">
     <div id="logo"><a href="#">LOGO</a></div>
-    <%= render :partial => 'pages/menu' %>
+    <%= render :partial => 'basises/menu' %>
    </div>
 
    <div id="right_area">
@@ -23,7 +23,7 @@
    </div>
   </div>
   <div id="footer">
-   @ 2012 Богомолов Д.А. | <%= link_to "ООО \"КВИТ\"", 'www.ia-it.ru' %>
+   <span class="where"><%= "#{$current_menu} - #{$current_submenu}" %></span> <%= current_core_user.username if signed_in? %> &copy; 2012 Богомолов Д.А. | <%= link_to "ООО \"КВИТ\"", 'www.ia-it.ru' %>
   </div>
 </body>
 </html>

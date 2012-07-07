@@ -1,0 +1,45 @@
+<div id="manager">
+ <fieldset>
+<legend>Просмотр партии</legend>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Дата партии:</b>
+  <%= @app_batch.batch_date.to_formatted_s(:ru_date) %>
+</p>
+
+<table class="sort" align="center">
+ <thead>
+  <tr>
+    <td>Время заезда</td>
+    <td>Номер машины</td>
+    <td>Масса брутто</td>
+    <td>Влажность</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ </thead>
+ <tbody>
+<% if @app_incomes then
+     @app_incomes.each do |app_income| %>
+  <tr>
+    <td><%= app_income.car_time.to_formatted_s(:ru_time_short) %></td>
+    <td><%= app_income.car_num %></td>
+    <td><%= app_income.weight_brutto %></td>
+    <td><%= app_income.moisture %></td>
+    <td><%= link_to 'Просмотр', app_income %></td>
+    <td><%= link_to 'Редактировать', edit_app_income_path(app_income) %></td>
+    <td><%= link_to 'Удалить', app_income, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  </tr>
+<%   end
+   end %>
+ </tbody>
+</table>
+<%= link_to 'Новый завоз', new_app_income_path(:batch_id => @app_batch.id) %>
+<br>
+
+<!--<%= link_to 'Редактировать партию', edit_app_batch_path(@app_batch) %> | -->
+<-<%= link_to 'Назад', lab_batches_path %>
+ </fieldset>
+</div>

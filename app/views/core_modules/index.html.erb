@@ -1,0 +1,32 @@
+<div id="manager">
+ <fieldset>
+<legend>Список модулей</legend>
+
+<table border=1 cellspacing=0>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Ord</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_modules.each do |core_module| %>
+  <tr>
+    <td><%= core_module.name %></td>
+    <td><%= core_module.description %></td>
+    <td><%= core_module.ord %></td>
+    <td><%= link_to 'Show', core_module %></td>
+    <td><%= link_to 'Edit', edit_core_module_path(core_module) %></td>
+    <td><%= link_to 'Destroy', core_module, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новый модуль', new_core_module_path %>
+
+ </fieldset>
+</div>

@@ -1,0 +1,2 @@
+module AppSuppliersHelper
+end

@@ -1,0 +1,23 @@
+<h1>Listing app_batches</h1>
+
+<table>
+  <tr>
+    <th>Batch date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @app_batches.each do |app_batch| %>
+  <tr>
+    <td><%= app_batch.batch_date %></td>
+    <td><%= link_to 'Show', app_batch %></td>
+    <td><%= link_to 'Edit', edit_app_batch_path(app_batch) %></td>
+    <td><%= link_to 'Destroy', app_batch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New App batch', new_app_batch_path %>

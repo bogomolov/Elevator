@@ -1,0 +1,30 @@
+<div id="delegation_form">
+ <fieldset>
+<legend>Просмотр пользователя</legend>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t 'username'%>:</b>
+  <%= @core_user.username %>
+</p>
+
+<p>
+  <b><%= t 'fullname'%>:</b>
+  <%= @core_user.fullname %>
+</p>
+
+<p>
+  <b><%= t 'admin'%>:</b>
+  <%= @core_user.admin %>
+</p>
+
+<p>
+  <b><%= t 'password'%>:</b>
+  <%= @core_user.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_core_user_path(@core_user) %> |
+<%= link_to 'Back', admin_path %>
+ </fieldset>
+</div>

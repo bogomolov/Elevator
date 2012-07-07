@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  role_id: 1
+  valid_from: 2012-06-19
+  valid_till: 2012-06-19
+
+two:
+  user_id: 1
+  role_id: 1
+  valid_from: 2012-06-19
+  valid_till: 2012-06-19
+
+# == Schema Information
+#
+# Table name: core_delegations
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  role_id    :integer
+#  valid_from :date
+#  valid_till :date
+#  created_at :datetime
+#  updated_at :datetime
+#
+

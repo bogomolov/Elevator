@@ -1,0 +1,25 @@
+<%= form_for(@app_season) do |f| %>
+  <% if @app_season.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app_season.errors.count, "error") %> prohibited this app_season from being saved:</h2>
+
+      <ul>
+      <% @app_season.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

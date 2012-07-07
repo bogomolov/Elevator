@@ -1,0 +1,30 @@
+<div id="delegation_form">
+ <fieldset>
+<legend>Просмотр назначения</legend>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Пользователь:</b>
+  <%= @core_delegation.user_name %>
+</p>
+
+<p>
+  <b>Роль:</b>
+  <%= @core_delegation.role_name %>
+</p>
+
+<p>
+  <b>Действительна с:</b>
+  <%= @core_delegation.valid_from %>
+</p>
+
+<p>
+  <b>Действительна по:</b>
+  <%= @core_delegation.valid_till_s %>
+</p>
+
+
+<%= link_to 'Изменить', edit_core_delegation_path(@core_delegation) %> |
+<%= link_to 'Назад', admin_delegations_path %>
+ </fieldset>
+</div>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @core_role.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @core_role.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_core_role_path(@core_role) %> |
+<%= link_to 'Back', core_roles_path %>
+
+<h2>Роль активна для следующих пользователей:</h2>
+<table border=1>
+  <tr>
+    <th rowspan=2>Идентификатор</th>
+    <th rowspan=2>ФИО</th>
+    <th colspan=2>Срок действия</th>
+  </tr>
+  <tr>
+    <th>С</th>
+    <th>По</th>
+  </tr>
+
+<% @core_role.core_delegations.where("? between valid_from and valid_till", Time.now).order('valid_from').each do |core_delegation| %>
+  <tr>
+    <td><%= CoreUser.find(core_delegation.user_id).username %></td>
+    <td><%= CoreUser.find(core_delegation.user_id).fullname %></td>
+    <td><%= core_delegation.valid_from %></td>
+    <td><%= core_delegation.valid_till %></td>
+  </tr>
+<% end %>
+</table>
+
+

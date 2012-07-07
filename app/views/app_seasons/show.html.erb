@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Year:</b>
+  <%= @app_season.year %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @app_season.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_app_season_path(@app_season) %> |
+<%= link_to 'Back', app_seasons_path %>

@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  ord: 1
+
+two:
+  name: MyString
+  description: MyString
+  ord: 1
+
+# == Schema Information
+#
+# Table name: core_modules
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  description :string(255)
+#  ord         :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

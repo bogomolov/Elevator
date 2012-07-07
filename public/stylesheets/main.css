@@ -15,11 +15,17 @@ html, body {
 
 body {
 	font: 14px/120% Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	background: url(../images/background.png);
+}
+
+legend {
+    border: 1px solid;
+    background: white;
 }
 
 /* Container*/
 #container {
-	height: auto !important;
+	/*height: auto !important;*/
 	height: 100%;
 	min-height: 100%;
 	width: 100%;
@@ -29,8 +35,9 @@ body {
 
 /* Left area classes and objects */
 #left_area {
-	background: url(../images/background_pattern.png);
+	background: url(../images/left_background.png);
 	float: left;
+	position: relative;
 	height: 100%;
 	width: 200px;
 	margin: 0;
@@ -51,9 +58,11 @@ body {
 
 /* Right area classes and objects */
 #right_area {
+    display: block;
 	height: 100%;
-	overflow: hidden;
+	width: auto;
 	color: black;
+	overflow: auto;
 }
 
 #working_area {
@@ -65,10 +74,10 @@ body {
     height: 20px;
     color: #FFF;
     background: green;
-    position: relative;
-    z-index: 1000;
-    margin-top: -20px;
-    margin-right: 20px;
+    position: fixed;
+    bottom: 0;
+    /*margin-top: -20px;
+    margin-right: 20px;*/
     width: 100%;
     text-align: right;
 }
@@ -87,4 +96,8 @@ body {
 
 fieldset {
 	margin: 10px;
+}
+
+span.where {
+    float: left;
 }
